@@ -1,15 +1,18 @@
-import React from "react";
+import { v4 as uuid } from "uuid";
+import React, { useState } from "react";
 import axios from "axios";
+import Dog from "./Dog";
 
-function DogList() {
+function DogList(dogs) {
+  // let dogs;
 
-  async function getDogs () {
-    const response = await axios.get("http://localhost:5001/dogs");
-    console.log(response);
-    // response.data
-  }
-  getDogs();
-  return <p>dog</p>
+
+
+  return (
+    <ul>
+      {dogs.map(dog => <Dog dog={dog} key={uuid()} />)}
+    </ul>
+  );
 
 }
 
