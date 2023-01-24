@@ -1,14 +1,12 @@
 
-
-function Dog({ age, name, src }) {
-
-
+function Dog({dog: { name, src }}) {
 
   return (
     <li>
-      <div>Name: {name}</div>
-      <div>Age: {age}</div>
-      <img src={`/${src}.jpg`} alt={`${name}-dog`} />
+      <div>
+        <h3>Name: {name}</h3>
+        <img src={`/${src}.jpg`} alt={`${name}-dog`} />
+      </div>
     </li>
   );
 }
