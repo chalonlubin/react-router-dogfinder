@@ -5,9 +5,18 @@ import axios from "axios";
 import RouteList from "./RouteList";
 import NavBar from "./NavBar";
 
+
+/** App component for DogList app
+ *
+ * Props: none
+ * State: dogs
+ *
+ * App -> [RouteList, NavBar]
+ */
 function App() {
   const [dogs, setDogs] = useState({ data: null, isLoading: true });
 
+  /** getDogs: get list of dogs from API */
   async function getDogs() {
     const response = await axios.get("http://localhost:5001/dogs");
     setDogs({ data: response.data, isLoading: false });
@@ -18,7 +27,6 @@ function App() {
     return <p>Loading...</p>;
   }
 
-  console.log("response:", dogs.data);
   return (
     <div className="App">
       <BrowserRouter>
