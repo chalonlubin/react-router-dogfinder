@@ -19,7 +19,7 @@ function Dog({dog: { name, src, age, facts }, extraDetails=false}) {
         <div>
           <p>Age: {age}</p>
           <ul>
-            {facts.map((fact) => (
+            {facts.map((fact) => ( //Note: key by default is index, unneeded. Maybe use uuid.
               <li>{fact}</li>
             ))}
           </ul>

@@ -20,7 +20,7 @@ function App() {
   async function getDogs() {
     const response = await axios.get("http://localhost:5001/dogs");
     setDogs({ data: response.data, isLoading: false });
-  }
+  } //Note: Add to another file for abstraction per breean.
 
   if (dogs.isLoading) {
     getDogs();
